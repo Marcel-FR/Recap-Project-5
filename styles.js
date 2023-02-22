@@ -15,6 +15,7 @@ export default createGlobalStyle`
   img {
     max-width: 90%;
   }
+  
   ul {
     list-style: none;
   }

@@ -1,16 +1,8 @@
 import GlobalStyle from "../styles";
 import useSWR from "swr";
+import Layout from "../components/Layout";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
-
-// export default function HomePage() {
-//   const { data: pieces } = useSWR(
-//     "https://example-apis.vercel.app/api/art",
-//     fetcher
-//   );
-//   const [spotlight, setSpotlight] = useState("")
-//   console.log(pieces);
-//   }
 
 export default function App({ Component, pageProps }) {
   const { data, error } = useSWR(
@@ -24,7 +16,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} pieces={data} />
+      <Layout>
+        <Component {...pageProps} pieces={data} />
+      </Layout>
     </>
   );
 }

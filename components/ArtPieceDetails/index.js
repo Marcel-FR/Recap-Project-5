@@ -1,18 +1,18 @@
 import Image from "next/image";
 
-export default function ArtPieceDetails({
-  image,
-  title,
-  artist,
-  year,
-  genre,
-  onClick,
-}) {
-  <>
-    <button onClick={onClick}>Back</button>
-    <Image width={80} height={80} src={image} alt={title} />
-    <p>{artist}</p>
-    <p>{year}</p>
-    <p>{genre}</p>
-  </>;
+export default function ArtPieceDetails({ currentArtPiece }) {
+  console.log(currentArtPiece);
+  return (
+    <>
+      <Image
+        width={80}
+        height={80}
+        src={currentArtPiece.imageSource}
+        alt={currentArtPiece.name}
+      />
+      <p>{currentArtPiece.artist}ARTIST</p>
+      <p>{currentArtPiece.year}JAHR</p>
+      <p>{currentArtPiece.genre}GENRE</p>
+    </>
+  );
 }

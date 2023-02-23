@@ -1,9 +1,9 @@
 import Spotlight from "../components/Spotlight";
 
-export default function spotlightOutput() {
+export default function SpotlightPage({ pieces }) {
   return (
     <>
-      <Spotlight />
+      <Spotlight pieces={pieces} />
     </>
   );
 }

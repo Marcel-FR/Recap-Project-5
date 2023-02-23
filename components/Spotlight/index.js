@@ -1,17 +1,19 @@
-import ArtPiece from "../../pages/Pieces";
 import Image from "next/image";
-import HomePage from "../../pages/Pieces";
 
-function getRandomInt({ pieces }) {
-  const randomIndex = Math.floor(Math.random() * 11);
+// function getRandomInt({ pieces }) {
+//   console.log(randomIndex);
+//   return pieces[randomIndex];
+// }
+
+export default function Spotlight({ pieces }) {
+  const randomIndex = pieces[Math.floor(Math.random() * pieces.length)];
   console.log(randomIndex);
-  return pieces[randomIndex];
-}
-
-export default function Spotlight({ image, artist }) {
   return (
-    <>
-      <Image width={80} height={80} src={image} alt={image} />
-    </>
+    <div>
+    <Image width="80" height="80" src={randomIndex.imageSource} alt={randomIndex.title} />
+    <p>
+      {randomIndex.name} by {randomIndex.artist}
+    </p>
+  </div>
   );
 }

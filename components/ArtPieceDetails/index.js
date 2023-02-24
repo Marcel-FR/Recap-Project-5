@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtPieceDetails({ currentArtPiece }) {
   console.log(currentArtPiece);
@@ -13,6 +14,7 @@ export default function ArtPieceDetails({ currentArtPiece }) {
       <p>{currentArtPiece.artist}ARTIST</p>
       <p>{currentArtPiece.year}JAHR</p>
       <p>{currentArtPiece.genre}GENRE</p>
+      <Link href="/">Back</Link>
     </>
   );
 }
